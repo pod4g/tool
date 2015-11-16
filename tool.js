@@ -27,7 +27,7 @@ function isFunction(fn){
 */
 function isNullObject(obj){
    if(obj == null){
-    return true;
+    return false;
    }
    for(var attr in obj){
     return false;
