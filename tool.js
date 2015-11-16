@@ -101,6 +101,43 @@ if(typeof Array.prototype.indexOf !== "function"){
 }
 
 /*
+ 数组filter方法
+*/
+if(typeof Array.prototype.filter !== 'function'){
+  Array.prototype.filter = function(fn){
+    var result = [],each,
+        i = 0,l = this.length;
+    while(i<l){
+        each = this[i++];
+        if(fn(each)){
+            result.push(each);
+        }
+    }
+    return result;
+  }
+}
+
+/*
+ 字符串startsWith方法
+*/
+if(typeof String.prototype.startsWith !== 'function'){
+    String.prototype.startsWith = function(s){
+        return this.indexOf(s) === 0;
+    }
+}
+
+/*
+ 字符串endsWith方法
+*/
+if(typeof String.prototype.endsWith !== 'function'){
+    String.prototype.endsWith = function(s){
+        return this.indexOf === this.length - 1;
+    }
+}
+
+
+
+/*
   判断地版本IE浏览器版本
   可以判断IE6 7 8 9
   不能判断IE10 11
