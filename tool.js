@@ -15,12 +15,29 @@ function type(arg){
     }
 }
 
+
+
+/*
+  判断地版本IE浏览器版本
+  可以判断IE6 7 8 9
+  不能判断IE10 11
+*/
+function isIE(ver){
+  var b = document.createElement("b");
+  b.innerHTML = "<!--[if IE "+ver+"]><i></i><![end if]-->"
+  return b.getElementsByTagName('i').length === 1;
+}
+
+
+
 /*
   判断传入的参数是否是function类型
 */
 function isFunction(fn){
     return type(fn) === 'function';
 }
+
+
 
 /*
   判断一个对象是否是 {}
@@ -35,6 +52,8 @@ function isNullObject(obj){
    return true;
 }
 
+
+
 function getCookie(key){
     var arr,reg = new RegExp("(^| )"+key+"=([^;]*)(;|$)");
     if(arr=document.cookie.match(reg)){
@@ -44,6 +63,8 @@ function getCookie(key){
     }
 }
 
+
+
 function deleteCookie(key){
     var expire = new Date();
     expire.setTime(expire.getTime() - 1);
@@ -51,6 +72,8 @@ function deleteCookie(key){
     if(cval!=null)
     document.cookie= key + "="+cval+";expires="+exp.toGMTString();
 }
+
+
 
 function deleteCookie(key){
     var expire = new Date();
@@ -72,6 +95,8 @@ if(typeof Array.prototype.forEach !== "function"){
     }
 }
 
+
+
 /* 
   数组归并方法
 */
@@ -90,6 +115,8 @@ if (typeof Array.prototype.reduce !== "function") {
     return previous;
   }
 
+
+
 /*
  数组indexOf方法
 */
@@ -99,6 +126,8 @@ if(typeof Array.prototype.indexOf !== "function"){
     return i === l?-1:i;
   }
 }
+
+
 
 /*
  数组filter方法
@@ -117,6 +146,8 @@ if(typeof Array.prototype.filter !== 'function'){
   }
 }
 
+
+
 /*
  字符串startsWith方法
 */
@@ -125,6 +156,8 @@ if(typeof String.prototype.startsWith !== 'function'){
         return this.indexOf(s) === 0;
     }
 }
+
+
 
 /*
  字符串endsWith方法
@@ -136,17 +169,15 @@ if(typeof String.prototype.endsWith !== 'function'){
 }
 
 
-
-/*
-  判断地版本IE浏览器版本
-  可以判断IE6 7 8 9
-  不能判断IE10 11
+/* 
+  随机从数组中取出数据 
+  data 数组
+  len  随机取出的元素的个数
 */
-function isIE(ver){
-  var b = document.createElement("b");
-  b.innerHTML = "<!--[if IE "+ver+"]><i></i><![end if]-->"
-  return b.getElementsByTagName('i').length === 1;
+function randArray(data, len) {
+  data.sort(function() {
+    return Math.random() - 0.5;
+  });
+  return data.slice(0, len);
 }
-
-
 
