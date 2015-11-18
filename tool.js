@@ -65,6 +65,16 @@ function getCookie(key){
 
 
 
+function setCookie(key,value,days){
+    // 设置cookie过期事件,默认是30天
+    var expire = new Date();
+    days = days || 30;
+    expire.setTime(expire.getTime() + (+days)*24*60*60*1000);
+    document.cookie = key + "="+ encodeURIComponent(value) + ";expires=" + expire.toGMTString();
+};
+
+
+
 function deleteCookie(key){
     var expire = new Date();
     expire.setTime(expire.getTime() - 1);
@@ -74,13 +84,55 @@ function deleteCookie(key){
 }
 
 
-
-function deleteCookie(key){
-    var expire = new Date();
-    expire.setTime(expire.getTime() - 1);
-    var cval= getCookie(key);
-    if(cval!=null)
-    document.cookie= key + "="+cval+";expires="+exp.toGMTString();
+/*
+  保存用户填入的信息到本地
+  支持localStorage的就使用localStorage
+  否则使用cookie
+  使用场景：
+  移动端、pc端皆可使用
+  在移动端如果webview不能使用localStorage，即可使用cookie
+  在pc端IE7及一下使用cookie，IE8+使用localStorage
+*/
+function setData(key,data){
+    var storage = window.localStorage;
+    var cook = document.cookie;
+    data = data || {};
+    key = key + '';
+    // 如果支持 localStorage 就使用，否则使用cookie
+    if(storage){
+        storage.setItem(key,JSON.stringify(data));
+    }else if(cook){
+        var setCookie = function(key,value,days){
+            // 设置cookie过期事件,默认是5天
+            var expire = new Date();
+            days = days || 5;
+            expire.setTime(expire.getTime() + (+days)*24*60*60*1000);
+            document.cookie = key + "="+ encodeURIComponent(value) + ";expires=" + expire.toGMTString();
+        };
+        setCookie(key,JSON.stringify(data));
+    }
+}
+/*
+  获取本地数据
+  对应setData
+*/
+function getData(key){
+    var storage = window.localStorage;
+    var cook = document.cookie;
+    if(storage){
+        return JSON.parse(window.localStorage.getItem(key+''));
+    }else if(cook){
+        var getCookie = function(key){
+            var arr,reg = new RegExp("(^| )"+key+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return decodeURIComponent(arr[2]);
+            }else{
+                return null;
+            }
+        };
+        return JSON.parse(getCookie(key));
+    }
+    return null
 }
 
 /*
