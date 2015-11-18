@@ -53,6 +53,22 @@ function isNullObject(obj){
 }
 
 
+/*
+  判断一个对象是否是普通的key:value对象并且value不能是function
+*/
+function isPlainObject(obj){
+  if(obj == null){
+    return false;
+  }
+  for(var attr in obj){
+    if( obj.hasOwnProperty(attr) && isFunction( obj[attr] ) ){
+            return false;
+    }
+  }
+  return true;
+}
+
+
 
 function getCookie(key){
     var arr,reg = new RegExp("(^| )"+key+"=([^;]*)(;|$)");
