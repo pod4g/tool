@@ -1,0 +1,8 @@
+JavaScript学习笔记
+
+1.数组复制
+ 
+   如 var arr = [1,2,3,4]
+   a. var arr2 = arr.slice(0)
+   b. var arr2 = arr.concat()
+
