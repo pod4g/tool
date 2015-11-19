@@ -12,3 +12,29 @@ JavaScript学习笔记
    a.var arr = Array.prototype.slice.call(likeArray)
    b.var arr = [].slice.call(likeArray)
 
+3.在函数内部定义与函数重名的变量
+
+ a.
+   function test(){
+     alert(test)
+   }
+   test() // function test(){ alert(test) }
+   test() // function test(){ alert(test) }
+ b.
+   function test(){
+     var test = 2;
+     alert(test);
+   }
+   test() // 2
+   test() // 2
+ c.
+   function test(){
+     test = 2;
+     alert(test);
+   }
+   test() // 2
+   test() // 报错。因为此时全局下的test已经变为2，并不是一个函数了。Uncaught TypeError: test is not a function
+   
+  结论：在函数内部定义跟函数名一致的变量要注意，一定使用var来使得同函数名的变量变为局部变量。。否则，定义的函数只有第一次执行时是正确的，后续的调用会出问题 xxx is not a function
+  
+ 
