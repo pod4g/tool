@@ -50,4 +50,100 @@ JavaScript学习笔记
   }
   any(); // liyanfeng
   
+
+5. NaN === NaN  --> false
+  
+   在js中只有NaN不等于自己，可以利用这个特性来判断一个字符串是否是数字
+
+   如
  
+   var str = '123';
+
+   str = +str;
+
+   if(str === str){
+  
+       // 说明不是NaN，也就是说 使用 + 号进行类型转换并没有问题，所以str肯定是数字格式的字符串
+       
+   }
+
+6.可以把一个构造函数当成一个普通函数来执行
+
+  var Person = function(){
+    this.name = 'liyanfeng';
+    this.age = 24;
+    console.log('person constructor');
+    return 123;
+  }
+ 
+  var p = new Person(); // is a new object not a number 123
+  
+  var p2 = p.constructor(); // is a number 123 not a new object
+ 
+
+7.带返回值的构造函数
+
+  
+  function return123(){
+    
+      console.log('return123 execute...');     
+    
+      return 123;
+  
+  }
+  
+  
+  
+  var Person = function(name,age){
+    
+     this.name = name;
+     
+     this.age = age;
+     
+     return return123();
+
+  }
+
+  var p = Person('liyanfeng',24);
+  
+  // 首先打印出 return123 execute...
+ 
+  console.log(p) // 123
+  
+  console.log(p.name) // undefined
+ 
+  console.log(p.age) // undefined
+ 
+  name 和 age 绑定到了全局环境中。。
+
+
+  var Person = function(name,age){
+    
+     this.name = name;
+     
+     this.age = age;
+     
+     return return123();
+
+  }
+
+  var p2 = new Person('liyanfeng',24);
+  
+  // 首先打印出 return123 execute...
+ 
+  console.log(p2) // Person {name: "liyanfeng", age: 24}
+  
+  console.log(p2.name) // liyanfeng
+ 
+  console.log(p2.age) // 24
+
+
+  可以看出来，若是前面有new操作符，return后的语句虽然会执行，但是忽略掉了返回值，因为js引擎要把new出的对象的应用赋值给p2。。。p2并不能接收2个返回值。。。！！！！！
+
+
+  
+
+
+
+
+
