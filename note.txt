@@ -6,3 +6,9 @@ JavaScript学习笔记
    a. var arr2 = arr.slice(0)
    b. var arr2 = arr.concat()
 
+2.likeArray转Array
+
+  如 var likeArray = {0:0,1:1,2:2,length:3}
+   a.var arr = Array.prototype.slice.call(likeArray)
+   b.var arr = [].slice.call(likeArray)
+
