@@ -18,7 +18,7 @@ function type(arg){
 
 
 /*
-  判断地版本IE浏览器版本
+  判断IE浏览器版本
   可以判断IE6 7 8 9
   不能判断IE10 11
 */
@@ -26,6 +26,15 @@ function isIE(ver){
   var b = document.createElement("b");
   b.innerHTML = "<!--[if IE "+ver+"]><i></i><![end if]-->"
   return b.getElementsByTagName('i').length === 1;
+}
+
+
+
+/*
+ 判断是否是window对象
+*/
+function isWindow(obj){
+  return obj!=null && obj == obj.window;
 }
 
 
