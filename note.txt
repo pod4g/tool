@@ -1,18 +1,29 @@
 JavaScript学习笔记
 
-1.数组复制
+
+8.判断一个对象是否是window对象
+
+  由于window的特殊性（globel），所以，判断它用的方法也很特殊
+  
+  如果一个对象是window对象,那么其下有一个window属性，就是它本身
+  
+  return obj!= null && obj == obj.window
+  
+  
+
+7.数组复制
  
    如 var arr = [1,2,3,4]
    a. var arr2 = arr.slice(0)
    b. var arr2 = arr.concat()
 
-2.likeArray转Array
+6.likeArray转Array
 
   如 var likeArray = {0:0,1:1,2:2,length:3}
    a.var arr = Array.prototype.slice.call(likeArray)
    b.var arr = [].slice.call(likeArray)
 
-3.在函数内部定义与函数重名的变量
+5.在函数内部定义与函数重名的变量
 
  a.
    function test(){
@@ -51,7 +62,7 @@ JavaScript学习笔记
   any(); // liyanfeng
   
 
-5. NaN === NaN  --> false
+3. NaN === NaN  --> false
   
    在js中只有NaN不等于自己，可以利用这个特性来判断一个字符串是否是数字
 
@@ -67,7 +78,7 @@ JavaScript学习笔记
        
    }
 
-6.可以把一个构造函数当成一个普通函数来执行
+2.可以把一个构造函数当成一个普通函数来执行
 
   var Person = function(){
     this.name = 'liyanfeng';
@@ -81,7 +92,7 @@ JavaScript学习笔记
   var p2 = p.constructor(); // is a number 123 not a new object
  
 
-7.带返回值的构造函数
+1.带返回值的构造函数
 
   
   function return123(){
