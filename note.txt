@@ -1,6 +1,21 @@
 JavaScript学习笔记
 
 
+9.arrayLike
+  
+  var al = {
+    0:1,
+    1:2,
+    2:3,
+    length:3
+  }
+ object的key一定为string类型！！！
+ 
+ for(var attr in al){
+   console.log(typeof attr);// string
+ }
+
+
 8.判断一个对象是否是window对象
 
   由于window的特殊性（globel），所以，判断它用的方法也很特殊
