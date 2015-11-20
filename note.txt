@@ -1,5 +1,10 @@
 JavaScript学习笔记
 
+11.可以new对象的内置构造函数，一般需要用type函数来判断类型
+
+   Number,Boolean,String,Array,Date,Function,Object,Error
+   
+   其他的内置对象，比如JSON,Math并不能new对象
 
 10.Object()函数具有最强的包装性
 
