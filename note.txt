@@ -1,6 +1,20 @@
 JavaScript学习笔记
 
 
+10.Object()函数具有最强的包装性
+
+   可以把基本类型的值变成包装类型
+   如果是传入的本身就是一个object对象，原样返回
+
+    Object(124) -> new Number(124)
+    Object(true) -> new Boolean(true)
+    Object('liy') -> new String('liy')
+    Object(null) -> new Object()
+    Object(undefined) -> new Object()
+    Object([1,2,3]) -> new Array(1,2,3)
+    Object(new Date()) -> new Date()
+    Object(\a\) -> new RegExp('a')
+    
 9.arrayLike
   
   var al = {
