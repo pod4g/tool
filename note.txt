@@ -1,5 +1,38 @@
 JavaScript学习笔记
 
+13.发现了函数的第二种调用方式
+   例如
+
+   var obj = {
+    say:function(data){
+      console.log('say '+data);
+    }
+   }
+
+   (obj.say)('李彦峰'); // 李彦峰
+
+   
+   function test(){
+     alert('test');
+   }
+
+   (test)(); // test
+
+
+   在jquery中的应用：
+   globalEval: function( data ) {
+        if ( data && jQuery.trim( data ) ) {
+            // We use execScript on Internet Explorer
+            // We use an anonymous function so that context is window
+            // rather than jQuery in Firefox
+            ( window.execScript || function( data ) {
+                window[ "eval" ].call( window, data );
+            } )( data );
+        }
+    }
+
+   
+
 12.jquery判断是否是数字isNumeric
 
    return  !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
