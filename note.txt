@@ -1,5 +1,30 @@
 JavaScript学习笔记
 
+12.jquery判断是否是数字isNumeric
+
+   return  !jQuery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
+   
+   对于 var num = new Number(123);
+        var str = new String('123');
+      都返回true
+      
+      原理是 在parseFloat时，参数会调用toString方法
+             num.toString() -> '123'
+             str.toString() -> '123'
+             
+       数组[1,2].toString() -> '1,2' 然后parseFloat -> 1
+       
+       所以不能是数组。。
+       
+       如果传入的数字是NaN,应该返回false， 肿么办？
+       
+       NaN - NaN = NaN
+       NaN - 1 = NaN
+       NaN >= 0  = false
+       
+       obj - parseFloat(obj) + 1 是为了防止parseFloa损失精度精度损失最高不能超过1，所以
+       不管obj - parseFloat(obj)的值是正是负（大部分都是0），再加上1，肯定大于等于0
+
 11.可以new对象的内置构造函数（9个），一般需要用type函数来判断类型
 
    Number,Boolean,String,Array,Date,Function,Object,RegExp,Error
