@@ -1,0 +1,220 @@
+一、类型介绍
+     js中，共有6中类型，其中5种是基本类型，1种复杂类型。
+
+    基本类型：number,boolean,string,null,undefined
+    复杂类型：object
+
+    5种基本类型中，除了null,undefined外都有相应的包装类。
+   
+    除了5中基本类型之外，所有的类型都是object类型的，不管是Array,Date,RegExp,Error,Object,Function的实例还是你自己定义的类的实例
+
+   typeof是js中用以判断类型的操作符，返回6种全小写的字符串，分别  是'number','boolean','string','function','undefined','object'
+
+  其中，null类型和Object类型都返回'object'，其实function也是Object类型的，但是由于function在js中的特殊性，所以有必要单独区分！！（javascript高级程序设计第3版第3章--24页）。
+
+----------------------------------------转boolean-------------------------------------
+
+二、转boolean
+ 
+    a、Boolean() 引起的转型
+
+         规则是：非零数字(含Infinity) --> true
+                     0/NaN                  --> false
+
+                     空字符串                --> false
+                     非空字符串             --> true
+                  
+                     Object类型            --> true
+                     null                      --> false
+
+                     undefined             --> false
+ 
+        注意：与 !! 引起的转型规则完全一致！！！，所以在平时自己写代码或看别人的代码时，几乎看不到使用Boolean(a)这种方式写的，一般都是使用 !!a 来转成boolean
+
+
+     b、if引起的转型
+
+          例如 
+          
+          var a = null;
+
+          if(a){
+
+             // do something...
+
+          }
+  
+          规则是：null,undefined,'',0,NaN  --> false
+
+    c、! 引起的转型
+
+         !null ,  !undefined ,  !'' ,  !0 ,  !NaN --> true
+    
+    注意：&&及||跟 if 配合的话，转型跟 if 引起的转型一致。。不跟if配合，有两种可能
+             
+             i、两边确实是boolean  经过逻辑运算，返回相应的值
+                 例如 true && false --> false  
+                        true ||  false --> true
+             ii、
+                 
+                   1、var t = a && b 
+                 
+                       相当于
+                       var t; 
+                       if(a){
+                          t = b;   
+                       }else{
+                          t = a;
+                       }
+        
+                  2、return a && b
+                   
+                      相当于
+                      if(a){
+                         return b; 
+                      }else{
+                        return a;
+                      }
+
+                  3、a && test()
+   
+                     相当于
+                      if(a){
+                          test();
+                      }
+
+                5、 var t = a || b;
+
+                    相当于
+                    var t;
+                    if(a){
+                       t = a;
+                    }else{
+                       t = b;
+                    }
+                 
+                 
+
+----------------------------------------转number-------------------------------------
+
+三、转number
+ 
+     转number共有三个函数，Number(),parseInt(),parseFloat()
+
+     a、Number()引起的转型 
+         
+          规则是：
+                     true   --> 1
+                     false  --> 0
+  
+ 如果字符串中只包含数字  如'123' --> 123
+ 如果字符串中包含有效的浮点数字  如'123.99' -->123.99
+ 如果字符串是有效的十六进制数字  如'0xFF'  --> 255
+ 如果字符串是空串 '' --> 0
+ 如果字符串包含上述格式之外字符  如'123a'  --> NaN
+ 如果是对象 则调用对象的valueOf方法，然后按照上述规则进行转换，如果没有valueOf方法，则调用对象的toString方法，然后按照上述规则进行转换。如果valueOf和toString都存在，则调用valueOf方法！！！
+
+         注意：Number会忽略前导0
+
+    c、parseInt/parseFloat引起的转型
+ 
+规则是：
+null,  undefined,  '', true, false  --> NaN
+如果字符串中只包含数字  如 '123' --> 123
+如果字符串中包含有效的浮点数字  如'123.99'  parseInt --> 123, parseFloat --> 123.99
+如果字符串是有效的十六进制数字  如
+    parseInt    '0xFF'  --> 255
+    parseFloat  '0xFF' --> 0
+
+解析字符串，知道某个字符不是数字为止 parseInt      '123a' --> 123 
+                                                    parseFloat   '123.3a' --> '123.a' 
+
+        如果参数是Object类型，会调用toString()方法。注意：并不会调用valueOf方法！！！
+
+    d、+, - ,*, /,%, ++, -- 都会引起类型转换，转换规则同a
+
+
+----------------------------------------转string-------------------------------------
+
+
+四、转string
+ 
+      a、String()引起的转型
+
+           规则是：
+         
+   如果值有toString()方法，则调用该方法(无参数)，并返回相应的结果
+   如果值是null，则返回'null'
+   如果值是undefined， 返回'undefined'
+
+     b、+ '' 引起的转型，规则同a
+ 
+          如 var str = null + ''     //  'null'
+      var str = undefined + ''    // 'undefined' 
+              ...
+
+----------------------------------------包装类型-------------------------------------
+
+五、包装类型
+
+     var num = new Number(123)
+     转型规则同Number()
+
+     var bool = new Boolean(true)
+     转型规则同Boolean()
+
+    
+     var str   = new String('123a')
+     转型规则同String()
+
+     包装类型转换大招：
+     Object()转包装类！！
+
+     如
+     var val = Object(arg)
+
+     如果arg是Object类型，原样返回
+     如果arg是number，boolean，string，则返回相应的包装实例
+     如果arg是null，undefined，则返回 {}
+
+     注意：var val = new Object(arg) 跟不带new的结果一致！！！
+
+
+----------------------------------------valueOf 和 toString-------------------------------------
+
+number/boolean/string/object都有toString和valueOf方法。。
+
+null和undefined没有这两个方法！！！！！
+
+a、+,-,*,/,%,++,--
+     会导致这两个方法被调用，valueOf存在就调用valueOf，不存在就调用toString，两者都存在，调用valueOf
+
+b、Number() 
+     会导致这两个方法被调用，valueOf存在就调用valueOf，不存在就调用toString，两者都存在，调用valueOf
+
+c、parseInt/parseFloat  
+    会导致toString方法被调用。。并不会调用valueOf！！！
+
+d、isNaN/isFinite 
+    会导致这两个方法被调用，valueOf存在就调用valueOf，不存在就调用toString，两者都存在，调用valueOf
+
+e、String()
+    会导致toString方法被调用。。并不会调用valueOf！！！
+
+总结：
+
+ +,-,*,/,%,++,--,Number,isNaN,isFinite
+
+ 会导致这两个方法被调用，valueOf存在就调用valueOf，不存在就调用toString，两者都存在，调用valueOf
+
+parseInt/parseFloat/String()
+
+ 会导致toString方法被调用。。并不会调用valueOf！！！
+
+
+
+----------------------------------------双等号引起的转型------------------------------------
+
+这篇文章对双等号引起的转型解释的很清楚
+
+引用地址：http://www.haorooms.com/post/js_yinxingleixing
