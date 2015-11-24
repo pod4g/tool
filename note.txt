@@ -1,5 +1,25 @@
 JavaScript学习笔记
 
+14.喜讯、喜讯，产房传喜讯
+
+   发现了深拷贝Object和Array对象的方法啦。。
+   
+   function deepCopy(obj){
+    
+     return JSON.parse(JSON.stringify(obj));
+    
+   }
+   
+   首先，把一个对象转成json格式字符串
+   JSON.stringify(obj)
+   接着，parse这个字符串，原样返回一个深层赋值的对象拷贝
+   JSON.parse(JSON.stringify(obj))
+   
+   这种方法太棒了，简单，高效！！唯一的不足就是兼容性，在IE67下并没有JSON对象。。但是！！这么老的浏览器考虑它干嘛。。。
+   
+   什么递归深拷贝，$.extends()都是浮云！！
+
+
 13.发现了函数的第二种调用方式
    例如
 
