@@ -12,7 +12,7 @@ JavaScript学习笔记
    
    首先，把一个对象转成json格式字符串
    JSON.stringify(obj)
-   接着，parse这个字符串，原样返回一个深层赋值的对象拷贝
+   接着，parse这个字符串，原样返回一个深层复制的对象拷贝
    JSON.parse(JSON.stringify(obj))
    
    这种方法太棒了，简单，高效！！唯一的不足就是兼容性，在IE67下并没有JSON对象。。但是！！这么老的浏览器考虑它干嘛。。。
