@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+16.关于history对象
+
+   地址     地址栏为空    #1     #2    #3    #4    #5
+   length       1          2      3     4     5     6
+
+   F5刷新页面、地址栏刷新(即光标放在地址栏，然后回车)、history.reload()刷新不会改变history
+   手动在地址栏修改hash、window.location.hash、location.href修改hash，不管修改后的地址是否存在history，都会改变history，方式    是往后append
+
 15.DOM对象不可序列化
 
 14.喜讯、喜讯，产房传喜讯
