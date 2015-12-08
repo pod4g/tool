@@ -1,5 +1,25 @@
 JavaScript学习笔记
 
+
+18.如果一个网页里有iframe，并且使用js来改变src的话，会改变这个页面的history
+
+   实验，一个页面只有一个a标签，点击a标签时，改变页面中iframe中的src（http://www.baidu.com），
+
+   a.onclick = function(){
+
+       var ifr = document.getElementById('if');
+       
+       ifr.src = "http://www.imooc.com";    
+     
+   }
+
+   在a标签被点击之前，使用 history.length 发现 history 队列的长度为2
+
+   点击之后，history.length = 3
+
+   说明了，页面中的iframe也会改变父框架的history
+
+
 17.关于replaceChild
 
    例如 div.replaceChild(em,span);
