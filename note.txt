@@ -1,6 +1,21 @@
 JavaScript学习笔记
 
 
+
+19.iframe里与父框架共享history。。
+
+   可以在iframe中验证history.length 与 父框架的history.length，他俩永远相等
+   
+   而
+   
+   window.location.hash 与 window.location.href
+   
+   不与父框架共享
+   
+   iframe里的_self链接还是在iframe里打开，而_blank链接则是新开一个浏览器tab。
+   
+   
+
 18.如果一个网页里有iframe，并且使用js来改变src的话，会改变这个页面的history
 
    实验：
