@@ -1,5 +1,15 @@
 JavaScript学习笔记
 
+17.关于replaceChild
+
+   例如 div.replaceChild(em,span);
+
+   replaceChild函数有两个参数，
+   第一个参数是要替换的新元素（一般是使用createElement新建出来的元素）；
+        如果是已经存在于文档中的节点作为第一个参数，那么会先清空div，然后把这个em节点 剪切 到div下
+   第二个参数必须是div元素的已存在的子元素，即span元素已经存在于div下了否则报错，
+       报错信息：Uncaught DOMException: Failed to execute 'replaceChild' on 'Node': The node to be replaced is not a child                   of this node.
+
 16.关于history对象
 
    地址     地址栏为空    #1     #2    #3    #4    #5
