@@ -4,7 +4,9 @@ JavaScript学习笔记
 
 19.iframe里与父框架共享history。。
 
-   可以在iframe中验证history.length 与 父框架的history.length，他俩永远相等
+   可以在iframe中验证history.length 与 父框架的history.length，他俩永远相等，
+   
+   在iframe页中调用history的go、back、forward方法与在父框架页里调用是一样的，
    
    而
    
