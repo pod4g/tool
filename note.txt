@@ -3,21 +3,27 @@ JavaScript学习笔记
 
 18.如果一个网页里有iframe，并且使用js来改变src的话，会改变这个页面的history
 
-   实验，一个页面只有一个a标签，点击a标签时，改变页面中iframe中的src（http://www.baidu.com），
+   实验：
+   
+   一个页面只有一个a标签，点击a标签时，改变页面中iframe中的src（http://www.baidu.com），
 
    a.onclick = function(){
 
        var ifr = document.getElementById('if');
        
-       ifr.src = "http://www.imooc.com";    
+       ifr.src = "http://www.imooc.com"; // 改变src为慕课网
      
    }
 
-   在a标签被点击之前，使用 history.length 发现 history 队列的长度为2
+   在a标签被点击之前，使用 history.length 发现 history 队列的长度为2 （一个空地址、一个当前地址本身）
 
    点击之后，history.length = 3
 
    说明了，页面中的iframe也会改变父框架的history
+   
+   这也就导致了我不能使用iframe来模拟native app的页面左滑入场，因为要结合window.location.hash 和 onhashchange 来管理
+   
+   前进和后退按钮，如果iframe也能改变history的话，会导致history会一次入队2个元素（一次是iframe引起的，一次是hash改变引起的）
 
 
 17.关于replaceChild
