@@ -1,6 +1,8 @@
 JavaScript学习笔记
 
 
+20.pushState 和 replaceState 不会导致hashchange事件触发。
+
 
 19.iframe里与父框架共享history。。
 
