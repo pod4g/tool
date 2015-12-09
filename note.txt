@@ -3,7 +3,7 @@ JavaScript学习笔记
 
 20.pushState 和 replaceState 不会导致hashchange事件触发；
 
-   调用pushState 和 replaceState方法并不会导致 onpostate 事件触发，
+   调用pushState 和 replaceState方法并不会导致 onpopstate 事件触发，
    
    该事件是在用户点击浏览器的“前进”、“后退”按钮在 ps 和 rs方法改变的history队列中的元素切换时才会触发。
 
