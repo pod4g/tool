@@ -1,5 +1,8 @@
 JavaScript学习笔记
 
+21.在父页面操作ifrmae时，必须得在服务器环境下，使用文件协议打开的页面是无法操作iframe的。报错信息：
+    Uncaught SecurityError: Failed to read the 'contentDocument' property from 'HTMLIFrameElement': Blocked a frame with origin "null" from accessing a frame with origin "null". Protocols, domains, and ports must match.
+
 
 20.pushState 和 replaceState 不会导致hashchange事件触发；
 
