@@ -1,5 +1,10 @@
 JavaScript学习笔记
 
+22. em的计算规则：
+    
+    1、自己有font-size的，em算自己的font-size，比如 div {font-size:20px;width:10em;} 此时width为 20*10 = 200px
+    2、自己没有font-size的（其实也有，继承于父元素），比如 body {font-size:30px;} div{width:20em;}，此时width为30*20=600px
+
 21.
     chrome下在父页面操作ifrmae时，必须得在服务器环境下，使用文件协议打开的页面是无法操作iframe的。报错信息：
     Uncaught SecurityError: Failed to read the 'contentDocument' property from 'HTMLIFrameElement': Blocked a frame with origin "null" from accessing a frame with origin "null". Protocols, domains, and ports must match.
