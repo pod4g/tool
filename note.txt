@@ -2,8 +2,42 @@ JavaScript学习笔记
 
 22. em的计算规则：
     
-    1、自己有font-size的，em算自己的font-size，比如 div {font-size:20px;width:10em;} 此时width为 20*10 = 200px
+    1、自己有font-size的，em乘自己的font-size，比如 div {font-size:20px;width:10em;} 此时width为 20*10 = 200px
     2、自己没有font-size的（其实也有，继承于父元素），比如 body {font-size:30px;} div{width:20em;}，此时width为30*20=600px
+    
+    一个大例子：
+    
+    <--html结构-->
+    
+     <body>
+        <div class="d">
+            <div class="d2">d2</div>
+        </div>
+     </body>
+     
+     <--css-->
+     
+     <style>
+        body{
+            font-size: 20px;
+        }
+        .d{
+            /* 继承了body的20px的font-size，此时.d的font-size为20px，所以width为20*60=1200px */
+            width: 60em;
+            background: #333;
+            height: 200px;
+        }
+        .d2{
+          color:white;
+          line-height: 1;
+          /* 继承了.d的20px的font-size（.d继承自body），此时.d2的font-size为 20*2 = 40px */
+          font-size: 2em;
+          /* 经过上面的运算，font-size为40px，所以height为 40*3 = 120px */
+          height: 3em;
+        }
+      </style>
+      
+      记住一个技巧：EM乘自己。
 
 21.
     chrome下在父页面操作ifrmae时，必须得在服务器环境下，使用文件协议打开的页面是无法操作iframe的。报错信息：
