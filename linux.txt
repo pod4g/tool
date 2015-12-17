@@ -1,1 +1,25 @@
+linux快捷键
 
+1、ctrl + a 切换到命令行开始
+
+2、ctrl + e 切换到命令行结尾
+
+3、ctrl + l 清屏
+
+4、ctrl + u 删除光标位置到开头的所有字符
+
+5、ctrl + k 删除光标位置到结尾的所有字符
+
+6、ctrl + y 粘贴刚才删除的字符（ctrl＋ｕ和 ctrl+k删除的）
+
+7、ctrl + c 终止当前命令
+
+8、ctrl + d 退出shell
+
+9、ctrl + z 转入后台运行
+
+10、!! 重复执行刚才最后一条命令
+
+11、history列出所有历史命令
+
+    !number 执行第number条历史命令
