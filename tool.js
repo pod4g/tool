@@ -29,8 +29,16 @@ function isIE(ver){
   return b.getElementsByTagName('i').length === 1;
 }
 
-
-
+/*
+  取样式
+*/
+function getStyle(dom,style){
+    if(dom.currentStyle){
+      return dom.currentStyle[style];
+    }else{
+      return getComputedStyle(dom,null)[style];
+    }
+}
 /*
  判断是否是window对象
 */
