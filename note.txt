@@ -1,5 +1,9 @@
 JavaScript学习笔记
 
+23. offsetLeft 和 offsetTop
+
+    相对于有定位（relative/absolute/fixed）的最近的祖先元素（直到找到body为止）的偏移（并不一定非是left 和 top的偏移）。
+
 22. em的计算规则：
     
     1、自己有font-size的，em乘自己的font-size，比如 div {font-size:20px;width:10em;} 此时width为 20*10 = 200px
