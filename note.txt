@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+24. python搭建http服务器
+
+    python -m SimpleHTTPServe 8088
+    
+    一个简易的http服务器就搭建好了，在浏览器访问 http://localhost:8088 如果命令执行的目录下有index.html，自动打开
+    
+    index.html 非常方便！！
+
 23. offsetLeft 和 offsetTop
 
     相对于有定位（relative/absolute/fixed）的最近的祖先元素（直到找到body为止）的偏移（并不一定非是left 和 top的偏移）。
