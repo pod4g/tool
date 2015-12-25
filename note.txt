@@ -1,5 +1,18 @@
 JavaScript学习笔记
 
+25. 属性选择器
+
+    a、span[data-id="18399639900348"]{ // data-id属性的值等于18399639900348的span元素
+        color:red;
+       }
+       
+    b、[data-id="18399639900348"]{ // 所有data-id属性的值等于18399639900348的元素
+        color:red;
+       }
+       
+    c、span[data-id]{ // 包含data-id属性的span元素
+        color:red;
+       }
 24. python搭建http服务器
 
     python -m SimpleHTTPServe 8088
