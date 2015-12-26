@@ -1,5 +1,33 @@
 JavaScript学习笔记
 
+27. 不使用框架，node js  路由怎么返回html文件给 客户端渲染?
+    
+    server.on('request',function(req,res){
+        
+        var urlStr = url.parse(req.url);
+        switch(urlStr.pathname){
+            
+            case '/' :
+            // 首页
+            sendData(htmlDir+'index.html',req,res);
+            break;
+            
+            case '/user':
+            // 用户首页
+            sendData(htmlDir+'user.html',req,res);
+            break;
+            
+            case '/login':
+            // 用户登录
+            sendData(htmlDir+'login.html',req,res);
+            break;
+            
+        }
+        
+    })
+    
+    总结：就是写好一个html文件，然后sentData() 把文件路径传进去就可以了。
+
 26. 手机webview是一个节省资源的版本，不同于手机浏览器，手机webview和手机浏览器大概有20-30%的差异
     
     最明显的是，在safari下，快速滚动页面，scroll事件不会丢失
