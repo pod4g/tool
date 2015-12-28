@@ -1,5 +1,7 @@
 JavaScript学习笔记
 
+29. 微信内部的webview不能跳转到app store，微信给禁用了
+
 28. 移动端scroll事件丢失
     
     在pc端一个页面快速滚动到页面底部（滚动距离为9200）大概执行42-50次scroll事件
