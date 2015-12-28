@@ -1,5 +1,10 @@
 JavaScript学习笔记
 
+28. 移动端scroll事件丢失
+    
+    在pc端一个页面快速滚动到页面底部（滚动距离为9200）大概执行42-50次scroll事件
+    在webview中，同样的距离，快速滚到到页面底部，执行的scroll事件次数为8-9次，丢失了很多次scroll事件！！！
+
 27. 不使用框架，node js  路由怎么返回html文件给 客户端渲染?
     
     server.on('request',function(req,res){
