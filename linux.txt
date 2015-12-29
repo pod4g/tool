@@ -1,5 +1,22 @@
 linux快捷键
 
+
+12、vi翻滚命令
+  
+    j & Ctrl+n 向下滚动一行 
+    k & Ctrl+p 向上滚动一行 Ctrl+p
+    h 向左移动一个字符
+    l 向右移动一个字符
+    
+    ctrl + f(front) 向下滚动一屏
+    ctrl + b(back)  向上滚动一屏
+    
+    ctrl + d(down)  向下滚动半屏  
+    ctrl + u(up)    向上滚动半屏
+        
+    ctrl + 
+
+
 1、ctrl + a 切换到命令行开始
 
 2、ctrl + e 切换到命令行结尾
