@@ -7,8 +7,6 @@ JavaScript学习笔记
         chrome & safari  4px 触发一次（怪不得性能好）
         firefox          1px 触发一次
         IE               22-24px 触发一次（大部分是23px、少部分24px、极少数22px，触发的频率这么低，IE还这么慢。辣鸡）
-    所有浏览器通过 document.body.scrollTop||document.documentElement.scrollTop 和 scrollTo(xpos,ypos) 跳转到指定位置
-    scroll事件只触发一次，触发的时机是：滚动到相应位置再触发！！
     
     
     移动端:
@@ -16,6 +14,10 @@ JavaScript学习笔记
         safari          1px 触发一次
         调调webview     npx 触发一次 n是手撒开之后滚动的距离 也就是说scroll事件的发生晚于pc和移动浏览器。
                                      所以就导致快速滑动屏幕，会导致scroll事件丢失很多。
+
+     所有浏览器通过 document.body.scrollTop||document.documentElement.scrollTop 和 scrollTo(xpos,ypos) 跳转到指定位置
+     scroll事件只触发一次，触发的时机是：滚动到相应位置再触发！！
+
 
 32. 可以使用setInterval(doScroll,100) 来代替scroll事件
 
