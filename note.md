@@ -1,8 +1,11 @@
 JavaScript学习笔记
 
-> 29. 微信内部的webview不能跳转到app store，微信给禁用了
 
-# 28. 移动端scroll事件丢失
+30. 在github上做的笔记，可以改成md格式的，例如本文件，原来是node.txt改成node.md之后，就可以使用markdown了。。
+
+ 29. 微信内部的webview不能跳转到app store，微信给禁用了
+
+ 28. 移动端scroll事件丢失
     
     在pc端一个页面快速滚动到页面底部（滚动距离为9200）大概执行42-50次scroll事件
     在webview中，同样的距离，快速滚到到页面底部，执行的scroll事件次数为8-9次，丢失了很多次scroll事件！！！
