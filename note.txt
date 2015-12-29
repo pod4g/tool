@@ -1,13 +1,32 @@
 JavaScript学习笔记
 
+33. scroll事件的触发
+    
+    pc:
+    
+        chrome & safari  4px 触发一次（怪不得性能好）
+        firefox          1px 触发一次
+        IE               22-24px 触发一次（大部分是23px、少部分24px、极少数22px，触发的频率这么低，IE还这么慢。辣鸡）
+    所有浏览器通过 document.body.scrollTop||document.documentElement.scrollTop 和 scrollTo(xpos,ypos) 跳转到指定位置
+    scroll事件只触发一次，触发的时机是：滚动到相应位置再触发！！
+    
+    
+    移动端:
+    
+        safari          1px 触发一次
+        调调webview     npx 触发一次 n是手撒开之后滚动的距离 也就是说scroll事件的发生晚于pc和移动浏览器。
+                                     所以就导致快速滑动屏幕，会导致scroll事件丢失很多。
+
+32. 可以使用setInterval(doScroll,100) 来代替scroll事件
+
 31. 在移动浏览器上不会出问题不代表在webview下不会出问题，记住：同一台手机上的浏览器跟各个app之间的webview不是完全一致的
     原因：
-     > 移动浏览器与webview的本身的差异
-     > 各个app更改了webview
+       移动浏览器与webview的本身的差异
+       各个app更改了webview
 
-    例子：1、在iphone上的调调webview里有scroll事件丢失问题
-          2、在魅族qq上的webview里，跳转到scrollTop会黑屏一下
-          3、微信的webview里不支持打开app store
+    例子：a、在iphone上的调调webview里有scroll事件丢失问题
+          b、在魅族qq上的webview里，跳转到scrollTop会黑屏一下
+          c、微信的webview里不支持打开app store
 
 30. 在github上做的笔记，可以改成md格式的，例如本文件，原来是node.txt改成node.md之后，就可以使用markdown了。。
 
