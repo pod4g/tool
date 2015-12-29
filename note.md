@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+31. 在移动浏览器上不会出问题不代表在webview下不会出问题，记住：同一台手机上的浏览器跟各个app之间的webview不是完全一致的
+    原因：
+     > 移动浏览器与webview的本身的差异
+     > 各个app更改了webview
+
+    例子：1、在iphone上的调调webview里有scroll事件丢失问题
+          2、在魅族qq上的webview里，跳转到scrollTop会黑屏一下
+          3、微信的webview里不支持打开app store
 
 30. 在github上做的笔记，可以改成md格式的，例如本文件，原来是node.txt改成node.md之后，就可以使用markdown了。。
 
