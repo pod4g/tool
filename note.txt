@@ -1,4 +1,19 @@
 JavaScript学习笔记
+34.
+    
+    <a class="test" href="javascript:alert(1);" onclick="alert(2);">展开</a>
+    <a class="test" href="http://www.baidu.com" onclick="alert(2);">展开</a>
+    
+    第一个点击，弹出 2，再弹出1
+    第二个点击，弹出 2，再跳转
+    
+    说明了 a 标签的 onclick 事件是发生在跳转之前的。
+    
+    同时：href中如果出现this，指的是window，onclick中的this指的是当前a标签
+    
+    测试浏览器：Safari、chrome、firefox、IE、Edge、360极速浏览器
+    
+   
 
 33. scroll事件的触发
     
