@@ -1,4 +1,12 @@
 JavaScript学习笔记
+35.
+    
+    CORS跨域
+    http://www.imooc.com/wenda/detail/303569
+    
+    Access-Control-Request-Headers: 
+    自定义的头部，所有用setRequestHeader方法设置的头部都将会以逗号隔开的形式包含在这个头中
+
 34.
     
     <a class="test" href="javascript:alert(1);" onclick="alert(2);">展开</a>
