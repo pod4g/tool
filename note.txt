@@ -1,4 +1,59 @@
 JavaScript学习笔记
+
+36.最好使用自执行函数的地方
+
+     if( sub > 0){
+        /*
+          向下滚动，从屏幕下方进入可视区，算出索引
+        */
+        var index = Math.floor((newScrollTop + viewportHeight)/ gridHeight);
+        // 根据索引取出索引处的卡片
+        var grid = gridArray[index];
+        var newSequence = +grid.dataset.sequence;
+        if(newSequence != oldSequence && grid.dataset.loaded == undefined){
+          var begin = newSequence * LOAD_COUNT; // 截取开始位置
+          var end = (newSequence + 1) * LOAD_COUNT ; // 截取结束位置
+          doAjaxAndUpdateDOM(allarticles.slice(begin,end));
+        }
+      }else if( sub < 0 ){
+        var index = Math.floor(newScrollTop / gridHeight);
+        var grid = gridArray[index];
+        var newSequence = grid.dataset.sequence;
+        if(newSequence != oldSequence && grid.dataset.loaded == undefined){
+          var begin = newSequence * LOAD_COUNT; // 截取开始位置
+          var end = (newSequence + 1) * LOAD_COUNT ; // 截取结束位置
+          doAjaxAndUpdateDOM(allarticles.slice(begin,end));
+        }
+      }
+      
+      可以看到 if 和 else 里的代码比较相似，可以提取出来
+      
+      变成：
+      
+      (function(sub){
+        var index,grid,newSequence,begin,end;
+        if(sub > 0){
+           index = Math.floor((newScrollTop + viewportHeight)/ gridHeight);
+        }else{
+           index = Math.floor(newScrollTop / gridHeight);
+        }
+        // 根据索引取出索引处的卡片
+        grid = gridArray[index];
+        newSequence = +grid.dataset.sequence;
+        if(newSequence != oldSequence && grid.dataset.loaded == undefined){
+          begin = newSequence * LOAD_COUNT; // 截取开始位置
+          end = (newSequence + 1) * LOAD_COUNT ; // 截取结束位置
+          doAjaxAndUpdateDOM(allarticles.slice(begin,end));
+        }
+      })(sub);
+      
+      这种写法效果跟上一种完全一样，但是更优雅！！
+
+
+
+
+
+
 35.
     
     CORS跨域
