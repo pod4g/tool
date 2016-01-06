@@ -1,5 +1,16 @@
 JavaScript学习笔记
 
+37.页面有无 <!DOCTYPE html> 很重要！！可能引起js逻辑错误/js报错/布局混乱/不再支持某些css属性
+
+   举一个例子：
+   在调调，分类页的listView中，
+   
+   计算可视区的高度
+   
+   无 <!DOCTYPE html> document.documentElement.clientHeight = 页面高度(body被撑开的高度)，显然是错误的结果
+   有 <!DOCTYPE html> document.documentElement.clientHeight = 可视区高度。right!!
+
+
 36.最好使用自执行函数的地方
 
      if( sub > 0){
