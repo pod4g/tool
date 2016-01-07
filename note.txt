@@ -1,5 +1,16 @@
 JavaScript学习笔记
 
+40.在页面创建一个元素，但是没有appendChild树中，能点击么？
+
+  function toPage(url){
+     var a = document.createElement('a');
+     a.href = url;
+     // document.body.appendChild(a);
+     a.click();
+   }
+   
+   这个方法在chrome/safari下是没有问题的，但是在firefox下必须append到页面！！
+
 39.现有3个页面，a/b/c，a页面有一个链接跳转到b页面，b页面load之后使用location.href跳转到c页面。
    
    此时history里不含b页面，也就是说，在c页面回退之后，直接到了a页面
