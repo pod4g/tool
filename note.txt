@@ -102,7 +102,7 @@ JavaScript学习笔记
     
         Android broswer&safari     1px 触发一次
     
-        IOS&Andorid调调webview     npx 触发一次 n是手撒开之后滚动的距离 也就是说scroll事件的发生晚于pc和移动浏览器。
+        IOS&Andorid调调webview     npx 触发一次 n是手撒开之前滚动的距离 也就是说scroll事件的发生晚于pc和移动浏览器。
                                      所以就导致快速滑动屏幕，会导致scroll事件丢失很多。
                                      
                                      中间会丢失很多次事件。但是第一次与最后一次绝不会丢失！！
