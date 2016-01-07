@@ -1,5 +1,8 @@
 JavaScript学习笔记
 
+38.在IOS webview/safari 和 mac safari 中cookie的key不能是汉字，这个大坑可坑死我了。。
+   在chrome/safari中是没有问题的。
+
 37.页面有无 <!DOCTYPE html> 很重要！！可能引起js逻辑错误/js报错/布局混乱/不再支持某些css属性
 
    举一个例子：
