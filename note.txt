@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+39.现有3个页面，a/b/c，a页面有一个链接跳转到b页面，b页面load之后使用location.href跳转到c页面。
+   
+   此时history里不含b页面，也就是说，在c页面回退之后，直接到了a页面
+   
+   但是，在b页面加一个定时器，3秒之后调到c页面，这时，history中就有了b页面。。好奇怪。。
+   
+   难道说，在某个页面，使用location.href跳转的太快，会导致history不记录？？
+
 38.在IOS webview/safari 和 mac safari 中cookie的key不能是汉字，这个大坑可坑死我了。。
    在chrome/firefox中是没有问题的。
    
