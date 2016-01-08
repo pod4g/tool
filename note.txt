@@ -18,6 +18,19 @@ JavaScript学习笔记
    但是，在b页面加一个定时器，3秒之后调到c页面，这时，history中就有了b页面。。好奇怪。。
    
    难道说，在某个页面，使用location.href跳转的太快，会导致history不记录？？
+   
+   
+   -----------------------------------------------------------------------------------------
+    这是一个百度知道的回答，不知道是否解释了b快速跳转到c页面，history不记录的问题。
+    
+    location.href是一个属性，要这样使用：
+    location.href='http://www.example.com'
+    而location.assign('http://www.example.com') 就是 location.href='http://www.example.com'
+    至于
+    location.replace('http://www.example.com')与前两者的区别是，在replace之后，浏览历史就被清空了（href与assign方法会产生历史记录）。
+    
+    建议：使用replace。因为前两者会产生历史记录，而浏览者如果点‘后退’按钮，就会产生'redirection loop'，会被浏览器禁止。
+   -----------------------------------------------------------------------------------------
 
 38.在IOS webview/safari 和 mac safari 中cookie的key不能是汉字，这个大坑可坑死我了。。
    在chrome/firefox中是没有问题的。
