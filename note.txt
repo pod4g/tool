@@ -1,5 +1,11 @@
 JavaScript学习笔记
 
+43.
+ 
+   a && dosomething 最好不要用这种写法，发现使用grunt uglify 压缩完毕之后，执行时会报错。
+   
+   报错信息：ReferenceError: Invalid left-hand side in assignment
+
 42.class是用来布局和显示样式的。不要使用class来做这和样式相关的任何事！
    
    例如，标识一个元素是否更新了其innerHTML
