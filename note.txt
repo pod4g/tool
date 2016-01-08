@@ -1,5 +1,9 @@
 JavaScript学习笔记
 
+41.选择页面上不含有 data-sequence 属性的且class为articlecard的元素
+  
+    document.querySelectorAll('.articlecard:not([data-sequence])')
+
 40.在页面创建一个元素，但是没有appendChild树中，能点击么？
 
   function toPage(url){
