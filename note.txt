@@ -1,5 +1,9 @@
 JavaScript学习笔记
 
+44. 
+ 
+   .class1.class2 可以选出即含有class1又含有class2的元素
+
 43.
  
    a && dosomething 最好不要用这种写法，发现使用grunt uglify 压缩完毕之后，执行时会报错。
