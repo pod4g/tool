@@ -1,6 +1,11 @@
 JavaScript学习笔记
 
 
+47.
+
+   几个元素嵌套在一起，如果width和height一致的话，点击这块区域，内嵌最深的元素是事件源对象。
+
+
 46.
 
    使用forEach循环，回调中的return就是for循环的continue。。。使用forEach无法使用break。。。
