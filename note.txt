@@ -1,5 +1,11 @@
 JavaScript学习笔记
 
+
+46.
+
+   使用forEach循环，回调中的return就是for循环的continue。。。使用forEach无法使用break。。。
+
+
 45. 
  
    不要循环给每个元素添加事件，而是要使用事件委托来添加事件。
