@@ -1,5 +1,20 @@
 JavaScript学习笔记
 
+48.
+
+   a标签是不可以嵌套的。
+   例如：
+   <a href="http://www.baidu.com">去往百度
+      <p>我是a标签下面的p标签</p>
+      <a href="http://sina.cn">去往新浪 </a>
+   </a>
+   
+   不符合规范，浏览器（chrome、safari、firefox）会解析成下面这样：
+   <a href="http://www.baidu.com">去往百度
+      <p>我是a标签下面的p标签</p>
+   </a>
+   <a href="http://sina.cn">去往新浪 </a>
+
 
 47.
 
