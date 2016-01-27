@@ -15,6 +15,9 @@ JavaScript学习笔记
    </a>
    <a href="http://sina.cn">去往新浪 </a>
 
+   p标签也是不能嵌套的
+
+
 
 47.
 
