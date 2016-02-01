@@ -1,5 +1,9 @@
 JavaScript学习笔记
 
+49.
+   
+   移动端的window没有onblur事件(或者永远不会触发，whatever..)
+
 48.
 
    a标签是不可以嵌套的。
