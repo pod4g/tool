@@ -3,7 +3,8 @@ JavaScript学习笔记
 49.
    
    移动端的window没有onblur事件(或者永远不会触发，whatever..)
-
+   我猜测可能是为了用户体验吧。如果我在移动端的window.oblur时间中alert(1)，那么用户将看到这个网页永远不能失去焦点
+   
 48.
 
    a标签是不可以嵌套的。
