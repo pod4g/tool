@@ -1,5 +1,90 @@
 JavaScript学习笔记
 
+56.
+
+   firefox css hack
+   
+   @-moz-document url-prefix(){
+     
+     /* 
+       写只在firefox中起作用的css
+     */
+
+   }
+   
+  --------------------------------------------
+  
+   IE css hack
+   
+   @media screen\0 {
+     
+      /* IE 8 9 10 11 hack*/
+   
+   }
+   
+   ----------------------------------------
+   
+   IE9 css  hack
+   
+   /* name:value\9\0; */
+   
+   display: none\9\0; 
+   
+   ----------------------------------------
+   
+   IE8 css hack
+   
+   .header{
+      
+      /*
+        
+        这里面写只有在IE8下起作用的样式和在所有浏览器下起作用的样式
+        
+      */
+   
+   }
+   
+   @media \0screen\,screen\9 {
+   	.header{
+	   	
+	   	/*
+	   	  
+	   	  这里面写除了IE8之外的浏览器使用的样式
+	   	  
+	   	*/
+	   	
+   	}
+   }
+ 
+ ----------------------------------------
+ 
+ IE6 hack
+ 
+ /* 
+ 
+   _name:value; 
+   *name2:value2;
+ 
+ */
+ 
+ _display:none;
+ 或
+ *display:none;
+ 
+ ----------------------------------------
+ 
+ IE7（和傲游） hack
+ 
+  *display:none;
+  
+ ----------------------------------------
+ 
+ IE6/7 hack
+ 
+ *display:none;
+ 
+ 
+ 
 55.
    
    对于所有元素，可以使用getElementsByName来根据name获取元素，但是
