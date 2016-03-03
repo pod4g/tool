@@ -14,11 +14,28 @@ JavaScript学习笔记
    
   --------------------------------------------
   
+  webkit内核css hack（chrome、safari、opera）
+  
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+     .demo { 
+       /*  
+        这里写只在webkit内核的浏览器下起作用的样式
+       */
+     } 
+  }
+  
+  
+  --------------------------------------------
+  
    IE css hack
    
    @media screen\0 {
      
-      /* IE 8 9 10 11 hack*/
+      /* 
+      
+       这里写在IE 8 9 10 11下起作用的样式
+      
+      */
    
    }
    
