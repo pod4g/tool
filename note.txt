@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+55.
+   
+   对于所有元素，可以使用getElementsByName来根据name获取元素，但是
+   
+   对于非form元素，element.name 是不可读写的，想读写name属性，可以使用getAttribute和setAttribute方法
+   
+   对于form元素，element.name 是可读写的
+
 54.
    在一个Node下第一个位置插入元素：
    
