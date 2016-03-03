@@ -1,5 +1,15 @@
 JavaScript学习笔记
 
+54.
+   在一个Node下第一个位置插入元素：
+   
+   node.insertBefore(newNode,node.childNodes[0]);
+
+53.
+   FireFox不支持innerText
+
+52.
+   Node.children在IE8下包含注释节点，要注意！！！
 
 51.设置fixed浮动，那么就是固定的，其位置不随滚动而改变。
 
