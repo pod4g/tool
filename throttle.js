@@ -36,14 +36,14 @@
     method:handler, // 被节流的函数
     context:this, // 被节流的函数的上下文。默认使用全局环境（浏览器为window，node为Global）
     interval:300, // 2次执行的时间间隔，只有大于此数，被节流的函数才会执行下一次
-    firstDelay:false // 第一次是否延迟执行。默认是false
+    firstDelay:true // 第一次是否延迟执行。默认是false
  });
  
  注意：
  
    对于多次触发了事件，只想最后执行一次回调的场景，例如 window.onresize 
    
-   请使用第3中用法，且设firstDelay为true。
+   请使用第3种用法，且设firstDelay为true。
 
 */
 
