@@ -20,12 +20,12 @@
  
  1、
   
-   // 3个参数，第一个参数为要节流的函数，第二个为被节流的函数的上下文（被节流函数内部的this所指向的对象），第三个为间隔时间
+   // 3个参数，第一个参数为被节流的函数，第二个为被节流的函数的上下文（被节流函数内部的this所指向的对象），第三个为间隔时间
   throttle(handler,this,1000); 
  
  2、
  
-  // 2个参数，第一个参数为要节流的函数，第二个为间隔时间。函数上下文使用默认的全局环境（浏览器为window，node为Global）
+  // 2个参数，第一个参数为被节流的函数，第二个为间隔时间。函数上下文使用默认的全局环境（浏览器为window，node为Global）
  throttle(handler,1000); 
 
 3、
@@ -65,14 +65,14 @@ function throttle(method,context,interval){
             }else if(argLen === 1){
                 arg = arguments[0];
                 method = arg.method;
-                context = arg.context || window;
+                context = arg.context || this;
                 interval = arg.interval;
                 if(typeof firstDelay === "boolean"){
                     firstDelay = arg.firstDelay;
                 }
             }else if(argLen === 2){
                 interval = context;
-                context = window;
+                context = this;
             }
             // 参数组装完毕
 
