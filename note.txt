@@ -37,7 +37,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
    
   --------------------------------------------
   
-  webkit内核css hack（chrome、safari、opera）
+  webkit内核css hack（chrome、safari、opera）很奇怪，在win10的edge下，竟然也起作用，莫非edge要向chrome看齐？
   
   @media screen and (-webkit-min-device-pixel-ratio:0) { 
      .demo { 
