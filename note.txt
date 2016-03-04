@@ -1,5 +1,13 @@
 JavaScript学习笔记
 
+58.
+
+MutationEvent已经弃用，以后不要使用MutationEvent
+
+建议使用MutationObserver
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
+
 57.
 
    今天（20160303）大叔问了我一个问题：如何让form提交给form所在页面本身？（该页面是一个模板文件，将会生成多种静态文件）
