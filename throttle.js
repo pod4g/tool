@@ -15,6 +15,36 @@
    一个函数节流之后，第一次执行是延迟的，很多时候，我们希望第一次执行就马上执行
    然后后面的才进行节流
 
+ 
+ 用法：
+ 
+ 1、
+  
+   // 3个参数，第一个参数为要节流的函数，第二个为被节流的函数的上下文（被节流函数内部的this所指向的对象），第三个为间隔时间
+  throttle(handler,this,1000); 
+ 
+ 2、
+ 
+  // 2个参数，第一个参数为要节流的函数，第二个为间隔时间。函数上下文使用默认的全局环境（浏览器为window，node为Global）
+ throttle(handler,1000); 
+
+3、
+ 
+  // 1个参数，使用配置（option）的方式
+  
+  throttle({
+    method:handler, // 被节流的函数
+    context:this, // 被节流的函数的上下文。默认使用全局环境（浏览器为window，node为Global）
+    interval:300, // 2次执行的时间间隔，只有大于此数，被节流的函数才会执行下一次
+    firstDelay:false // 第一次是否延迟执行。默认是false
+ });
+ 
+ 注意：
+ 
+   对于多次触发了事件，只想最后执行一次回调的场景，例如 window.onresize 
+   
+   请使用第3中用法，且设firstDelay为true。
+
 */
 
 function throttle(method,context,interval){
