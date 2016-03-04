@@ -64,7 +64,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
    
    ----------------------------------------
    
-   IE9 css  hack
+   IE9/10 css  hack
    
    /* name:value\9\0; */
    
