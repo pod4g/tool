@@ -10,7 +10,7 @@
  *
  */
  
- ;(function(w){
+ ;(function(w,doc,undefined){
     var Drag = function(obj){
         this.obj = obj;
         this.main();
@@ -26,14 +26,14 @@
                  e = e || event;
                  var posX = e.clientX - this.offsetLeft;
                  var posY = e.clientY - this.offsetTop;
-                document.onmousemove = function(e){
+                doc.onmousemove = function(e){
                     e = e || event;
                     self.style.left = e.clientX - posX + "px";
                     self.style.top = e.clientY - posY + "px";
                 }
             }
             self.onmouseup = function(){
-                  document.onmousemove = null;
+                  doc.onmousemove = null;
             };
         },
         main:function(){
@@ -42,4 +42,4 @@
         }
     }
     w.Drag = Drag;
- })(window);
+ })(window,document);
