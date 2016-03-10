@@ -1,6 +1,8 @@
 JavaScript学习笔记
 
-58.
+
+
+59.
 
 MutationEvent已经弃用，以后不要使用MutationEvent
 
@@ -8,7 +10,7 @@ MutationEvent已经弃用，以后不要使用MutationEvent
 
 https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
 
-57.
+58.
 
    今天（20160303）大叔问了我一个问题：如何让form提交给form所在页面本身？（该页面是一个模板文件，将会生成多种静态文件）
    
@@ -23,7 +25,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
  
  
 
-56.
+57.
 
    firefox css hack
    
@@ -125,16 +127,24 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
  
  
  
-55.
+56.
    
    对于所有元素，可以使用getElementsByName来根据name获取元素，但是
    
    对于非form元素，element.name 是不可读写的，想读写name属性，可以使用getAttribute和setAttribute方法
    
    对于form元素，element.name 是可读写的
+   
+
+55.
+
+   已知一个节点node，在其前面插入一个节点：
+   
+   node.parentNode.insertBefore(newNode,node);
+   
 
 54.
-   在一个Node下第一个位置插入元素：
+   在一个Node下第一个位置插入节点：
    
    node.insertBefore(newNode,node.childNodes[0]);
 
