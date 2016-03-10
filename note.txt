@@ -1,6 +1,26 @@
 JavaScript学习笔记
 
 
+60.
+
+ JS属性选择器
+ 
+ var dom = document.querySelectorAll('.articlecard:not([data-sequence])') // 选取class为articlecard且没有data-sequence的元素
+ 
+ var dom2 = document.querySelectorAll('[type=button]'); // 选取所有type="button"的元素
+ 
+ var dom3 = document.querySelectorAll(':not([type=button])');; // 选取所有type不是button的元素
+ 
+ var dom4 =  document.querySelectorAll('[type$=text]'); // 选取type属性的值以text结尾的元素
+ 
+ var dom5 =  document.querySelectorAll('[type^=text]'); // 选取type属性的值以text开头的元素
+  
+ var dom6 =  document.querySelectorAll('[type*=text]'); // 选取type属性中含有text的元素
+ 
+ var dom7 =  document.querySelectorAll('[type~=text]'); // 选取以type属性值含有text的元素。必须得是一个词。
+ 
+ var dom8 =  document.querySelectorAll('[type]'); // 选取所有含有属性值type的元素
+ 
 
 59.
 
