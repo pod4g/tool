@@ -18,7 +18,7 @@
     Drag.prototype = {
         constructor:Drag,
         addStyle:function(){
-            this.obj.style.cssText = "position:absolute;left:"+this.obj.offsetLeft + "px;top:" + this.obj.offsetTop + "px";
+            this.obj.style.cssText = "position:absolute;left:"+this.obj.offsetLeft + "px;top:" + this.obj.offsetTop + "px;";
         },
         bindEvent:function(){
             var self = this.obj;
