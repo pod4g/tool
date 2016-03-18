@@ -1,3 +1,14 @@
+
+/*
+  数组乱序最快方法
+*/
+if (!Array.prototype.shuffle) {
+    Array.prototype.shuffle = function() {
+        for(var j, x, i = this.length; i; j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
+        return this;
+    }
+}
+
 /*
   判断传入的参数的类型
 */
