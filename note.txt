@@ -1,5 +1,15 @@
 JavaScript学习笔记
 
+61.
+ 
+ 取[a,b)之间的随机数
+ 
+ var random = Math.floor( Math.random()*a + Math.random()*( b - a ) );
+ 
+ 取[a,b]之间的随机数
+ 
+ var random = Math.ceil( Math.random()*a + Math.random()*( b - a ) );
+ 
 
 60.
 
