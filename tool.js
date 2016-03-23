@@ -1,11 +1,27 @@
 
 
+
+
+/*
+ 
+ 判断obj是否是数字或数字格式字符串
+ 
+*/
+
 function isNumeric(obj){
   
   var str = obj && obj.toString();
   
   return type(obj)!=="array" && ( str - parseFloat( str ) + 1 ) >= 0;
   
+}
+
+/*
+  判断一个对象是否是window对象
+*/
+
+function isWindow( obj ) {
+	return obj != null && obj === obj.window;
 }
 
 
