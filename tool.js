@@ -1,4 +1,14 @@
 
+
+function isNumeric(obj){
+  
+  var str = obj && obj.toString();
+  
+  return type(obj)!=="array" && ( ( str - parseFloat( str ) ) + 1 ) >= 0;
+  
+}
+
+
 /*
   数组乱序最快方法
 */
