@@ -8,7 +8,7 @@ function extend(){
 
     var target = arguments[0] || {},
     length = arguments.length;
-    i = 1,deep,name,clone;
+    i = 1,deep = false,name,clone,src,copyisArray,options;
 
     if(typeof target === "boolean"){
         deep = target;
