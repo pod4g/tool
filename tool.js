@@ -41,6 +41,7 @@ function extend(){
                 if(deep && copy && ( isPlainObject(copy) || ( copyisArray = type(copy) === "array" )  ） ){
 
                     if(copyisArray){
+                    	copyIsArray = false;
                         clone = src && type(src) === "array" ? src : [];
                     }else{
                         clone = src && type(src) === "object" ? src : {};
