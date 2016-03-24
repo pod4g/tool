@@ -7,6 +7,7 @@
 
 function generateID(prefix) {
     prefix = prefix || "prefix"
+    // Math.random() + Math.random() => [0,2)
     return String(Math.random() + Math.random()).replace(/\d\.\d{4}/, prefix)
 }
 
