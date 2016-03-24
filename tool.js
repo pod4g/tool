@@ -1,6 +1,17 @@
 
 /*
 
+  使用js来生成UUID
+
+*/
+
+function generateID(prefix) {
+    prefix = prefix || "prefix"
+    return String(Math.random() + Math.random()).replace(/\d\.\d{4}/, prefix)
+}
+
+/*
+
    仿jquery extend方法
 
 */
