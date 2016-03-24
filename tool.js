@@ -1,4 +1,64 @@
 
+/*
+
+   仿jquery extend方法
+
+*/
+function extend(){
+
+    var target = arguments[0] || {},
+    length = arguments.length;
+    i = 1,deep,name,clone;
+
+    if(typeof target === "boolean"){
+        deep = target;
+        target = arguments[i] || {};
+        i++;
+    }
+
+    if(typeof target === "object" && typeof target !== "function"){
+        target = {};
+    }
+
+    if(i === length){
+        target = this;
+        i--;
+    }
+
+    for( ; i < length ;i++){
+
+        if((options = arguments[i])!=null){
+
+            for(name in options){
+
+                src = target[name];
+                copy = options[name];
+
+                if(target === copy){
+                    continue;
+                }
+
+                if(deep && copy && ( isPlainObject(copy) || ( copyisArray = type(copy) === "array" )  ） ){
+
+                    if(copyisArray){
+                        clone = src && type(src) === "array" ? src : [];
+                    }else{
+                        clone = src && type(src) === "object" ? src : {};
+                    }
+
+                    target[name] = extend(deep,clone,copy);
+
+                } else if(copy !== undefined){
+                    target[name] = copy;
+                }
+
+            }
+
+        }
+
+    }
+}
+
 
 /*
 
