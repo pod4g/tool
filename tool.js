@@ -16,7 +16,7 @@ function extend(){
         i++;
     }
 
-    if(typeof target === "object" && typeof target !== "function"){
+    if(typeof target === "object" && type(target) !== "function"){
         target = {};
     }
 
