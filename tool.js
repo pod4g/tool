@@ -235,6 +235,28 @@ function isIE(ver){
 }
 
 /*
+
+  新的判断IE版本的函数，可以判断所有IE版本
+  非IE返回NaN
+*/
+
+function IE() {
+    // 能进到这里来，说明一定是IE
+    if (window.VBArray) {
+    	// 取出IE的版本
+        var mode = document.documentMode
+        // IE6、IE7 不支持documentMode，那就使用XMLHttpRequest，支持的就是IE7，否则就是IE6
+        // 至于支持documentMode的IE，则直接return
+        return mode ? mode : window.XMLHttpRequest ? 7 : 6
+    } else {
+        return NaN
+    }
+}
+var IEVersion = IE()
+
+
+
+/*
   取样式
 */
 function getStyle(dom,style){
