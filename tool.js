@@ -204,6 +204,31 @@ if (!Array.prototype.shuffle) {
 }
 
 /*
+
+ 第二个判断类型的函数，那个好一点儿？
+
+*/
+
+function type(arg){
+	var t = typeof arg,s;
+	
+	// null and undefined return "null" and "undefined"
+	if(arg == undefined){
+		return arg + '';
+	}
+	
+	if(t === 'object'){
+		
+		s = Object.prototype.toString.call(arg);
+		
+		return s.slice(8,-1).toLowerCase();
+		
+	}else{
+	    return t;
+	}
+}
+
+/*
   判断传入的参数的类型
 */
 function type(arg){
