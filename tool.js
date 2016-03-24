@@ -210,6 +210,9 @@ if (!Array.prototype.shuffle) {
 */
 
 function type(arg){
+	
+	// undefined number boolean string function object
+	
 	var t = typeof arg,s;
 	
 	// null and undefined return "null" and "undefined"
@@ -224,6 +227,7 @@ function type(arg){
 		return s.slice(8,-1).toLowerCase();
 		
 	}else{
+	    // number boolean string function
 	    return t;
 	}
 }
