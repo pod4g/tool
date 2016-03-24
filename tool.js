@@ -12,7 +12,7 @@ function merge(first,second){
 	j = 0;
 	i = first.length;
 	
-	for( ; i < len ; i++ ){
+	for( ; j < len ; j++ ){
 		first[i++] = second[j];
 	}
 	
