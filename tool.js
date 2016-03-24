@@ -1,5 +1,112 @@
 
 
+/*
+
+  合并两个数组或array like 对象
+
+*/
+
+function merge(first,second){
+	
+	var len = +second.length,
+	j = 0;
+	i = first.length;
+	
+	for( ; i < len ; i++ ){
+		first[i++] = second[j];
+	}
+	
+	first.length = i;
+	
+	return first;
+	
+}
+
+
+
+
+
+
+/*
+
+  判断一个对象是否是plain empty object
+
+*/
+
+
+function isPlainEmptyObject(obj){
+	
+	
+	if(!isPlainObject(obj)){
+		return false;
+	}
+	
+	return this.isEmptyObject(obj);
+	
+	
+}
+
+
+
+/*
+
+   判断一个数组和对象是否是empty
+   
+   只要传入的obj对象没有emunerable=true的属性，就返回true
+
+*/.
+
+function isEmptyObject(obj){
+	var name;
+	for(name in obj){
+		return false;
+	}
+	return true;
+}
+
+
+/*
+   
+   判断传入参数是否是plain object
+
+*/
+
+
+function isPlainObject(obj){
+	
+	if(type(obj) !== "object" || obj.nodeType || isWindow(obj)){
+		return false;
+	}
+	
+	if(obj.constructor && Object.prototype.hasOwnProperty.call( obj.constructor.prototype,"isPrototypeOf")){
+		return false;
+	}
+	
+	return true;
+	
+}
+
+
+
+/*
+
+  判断传入参数是否是ArrayLike对象
+
+*/
+
+function isArrayLike(obj){
+	
+	var length = !!obj && "length" in obj && obj.length,
+	    type = type(obj);
+	
+	if(type === "function" || isWindow(obj)){
+		return false;
+	}
+	
+	return type === "array" || length === 0 || typeof +length === "number" && length > 0 && (length - 1) in obj;
+	
+}
+
 
 
 /*
