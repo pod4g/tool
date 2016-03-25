@@ -1,4 +1,20 @@
 
+  function getTag(a) {
+    var ret = {
+        type: a.nodeName
+    }
+    if (ret.type.charAt(0) !== "#") {
+        ret.children = []
+    }
+    for (var i = 0, el; el = a.childNodes[i++]; ) {
+        ret.children.push(getTag(el))
+    }
+
+    return ret
+}
+console.log(getTag(document.body))
+
+
 /*
 
   使用js来生成UUID
