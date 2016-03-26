@@ -1,5 +1,30 @@
 JavaScript学习笔记
 
+64.
+
+
+<!--[if lte IE7]
+
+<style type="text/css">
+
+/*写只在IE6和IE7下起作用的样式*/
+
+.dd-ie6-mask{
+  
+  ...
+ 
+}
+
+</style>
+
+
+
+<div class="dd-ie6-mask"></div>
+
+
+<![endif]-->
+
+
 63.
 
 字符串快速变数组：
