@@ -8,6 +8,9 @@
 
 function add(num1, num2){
  var r1, r2, m;
+ if(Number.isInteger(num1) || Number.isInteger(num2)){
+ 	return num1 + num2;
+ }
  r1 = (''+num1).split('.')[1].length;
  r2 = (''+num2).split('.')[1].length;
  
