@@ -17,6 +17,15 @@ function add(num1, num2){
 
 console.log(add(0.1,0.2)); //0.3
 console.log(add(0.15,0.2256)); //0.3756
+
+
+/*
+ 判断一个数是否是整数
+*/
+
+Number.isInteger = Number.isInteger || function(num){
+   return parseInt(x, 10) === x; 
+}
   
   
   
