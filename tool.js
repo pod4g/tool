@@ -1,5 +1,16 @@
 
 /*
+
+ 判断一个字符串是不是回文
+
+*/
+
+function isPalindrome(str) {
+  str = str.replace(/\W/g, '').toLowerCase(); 
+  return (str == str.split('').reverse().join(''));
+}
+
+/*
  
    js中浮点数精确计算
    例如 0.1 + 0.2 = 0.30000000000000004就是有误差所致
