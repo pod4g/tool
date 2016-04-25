@@ -1,6 +1,8 @@
 JavaScript学习笔记
 
+66.
 
+可以通过 element.setSelectionRange 来设置input光标的位置
 
 65.
 
