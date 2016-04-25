@@ -1,5 +1,11 @@
 JavaScript学习笔记
 
+67.
+
+使用test函数时，正则要慎用 g ，我就遇到了一个bug
+
+详见 http://my.oschina.net/ffwcn/blog/276949?fromerr=tCyOJ0zn
+
 66.
 
 可以通过 element.setSelectionRange 来设置input光标的位置
