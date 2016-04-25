@@ -1,3 +1,31 @@
+/*
+
+ 设置input光标的位置
+
+*/
+
+function setCursorPosition(elem, index) {
+    var val = elem.value
+    var len = val.length
+ 
+    // 超过文本长度直接返回
+    if (len < index) return
+    setTimeout(function() {
+        elem.focus()
+        if (elem.setSelectionRange) { // 标准浏览器
+            elem.setSelectionRange(index, index)   
+        } else { // IE9-
+            var range = elem.createTextRange()
+            range.moveStart("character", -len)
+            range.moveEnd("character", -len)
+            range.moveStart("character", index)
+            range.moveEnd("character", 0)
+            range.select()
+        }
+    })
+}
+
+
 
 /*
 
