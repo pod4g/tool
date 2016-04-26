@@ -1,5 +1,10 @@
 JavaScript学习笔记
 
+
+68.
+
+IE中children包括注释节点，这是新首页中遇到的bug，董旭在ie8中发现的
+
 67.
 
 使用test函数时，正则要慎用 g ，我就遇到了一个bug
