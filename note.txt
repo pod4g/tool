@@ -1,5 +1,30 @@
 JavaScript学习笔记
 
+69.
+
+资源引用前面不加协议
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+
+浏览器会为这个 URL 使用当前页面所使用的 HTTP/HTTPS 协议（主要是为了防止 HTTPS 页面加载 HTTP 资源，因为这种方式不安全）。
+这种引用资源的方式常用于使用了公共 CDN 的 JS/CSS 资源。
+
+这也就是说，在本地以文件协议打开网页的话，如果没有协议，浏览器会取当前页面所用的协议加上去，也就是file协议，所以会404
+
+解决办法就是在本地起一个服务器，在服务器中打开网页就不会有这个问题了。。线上更没有这个问题。。。
+
+---------------------------------------------------
+
+这也是 Google 代码风格指导里的规定：省略嵌入资源的协议：
+
+Omit the protocol from embedded resources.
+
+Omit the protocol portion (http:, https:) from URLs pointing to images and other media files, style sheets, and scripts unless the respective files are not available over both protocols.
+
+Omitting the protocol—which makes the URL relative—prevents mixed content issues and results in minor file size savings.
+
+知乎关于此问题的链接：https://www.zhihu.com/question/21668924
+谷歌的规定：https://google.github.io/styleguide/htmlcssguide.xml#Protocol
 
 68.
 
