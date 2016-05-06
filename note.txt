@@ -1,5 +1,17 @@
 JavaScript学习笔记
 
+70.
+
+angular “Duplicates in a repeater are not allowed“
+
+报错原因是：angular在使用repeat directive时，如果数组里有相同的值，就报这个错误。
+
+触发这个错误：<div ng-repeat="row in [1,1,1]"> 
+
+解决方案：a.要么数组去重
+          b.要么 <div ng-repeat="row in [1,1,1] track by $index">
+
+
 69.
 
 资源引用前面不加协议
