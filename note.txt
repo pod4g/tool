@@ -1,5 +1,31 @@
 JavaScript学习笔记
 
+71.
+
+ js代码不写分号坑
+ 
+ var conf = {
+  
+    hash:{
+      
+      limit:"#limit",
+      coupon:"#coupom"
+    
+    }
+ 
+ } // 这儿少一个分号
+ 
+ 
+ (function(){
+ 
+   // doing something
+ 
+ })()
+
+
+会报错 Uncaught TypeError: (intermediate value) is not a function
+
+
 70.
 
 angular “Duplicates in a repeater are not allowed“
