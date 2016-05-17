@@ -1,5 +1,17 @@
 JavaScript学习笔记
 
+
+72.
+
+a. node.insertBefore(arg1,arg2) //insert第一个，before第二个
+
+   如果第一个参数已经存在于node中，那么该方法执行完毕之后，node下面并不会有2个arg1元素，相当于dom树从新排序成了arg1在arg2前面的新树。这正是我想要的。
+
+b. node.appendChild(arg)
+
+   如果arg已经存在于node下，执行完该方法，在node下并不会有2个arg元素，相当于dom树从新排序成了arg为最后一个元素的新树。
+
+
 71.
 
  js代码不写分号坑
