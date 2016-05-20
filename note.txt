@@ -1,5 +1,23 @@
 JavaScript学习笔记
 
+73.
+
+在做开发时，写css3属性时，不要忘记写-webkit-前缀
+
+做积分商城时就发现了一个bug，在IOS8.x中，弹窗没有居中
+
+由
+
+transform: translateX(-50%); 
+
+改为
+
+-webkit-transform: translateX(-50%);
+-moz-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+transform: translateX(-50%);
+
+即可
 
 72.
 
