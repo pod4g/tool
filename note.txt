@@ -1,5 +1,17 @@
 JavaScript学习笔记
 
+74.
+
+angular中的filter服务
+
+jfApp.controller('mallGiftCtrl',function($scope,$filter){
+
+   var dateFormater = $filter('date');
+   var pattern = "yyyy-MM-dd HH:mm:ss"
+   
+   var timeStr = dateFormater(new Date(),pattern);
+	
+})
 
 
 73.
