@@ -11,10 +11,11 @@ function flatten(arr,ret){
     ret = ret || [];
     if( arr == null || arr.length === 0 ) return ret;
     var i = 0,length = arr.length,item;
-    var toString = Object.prototype.toString;
+    // var toString = Object.prototype.toString;
     while( i < length ){
         item = arr[i++];
-        if(toString.call(item) === '[object Array]'){
+        // if(toString.call(item) === '[object Array]'){
+        if(item instanceof Array){ // 这样判断会更好
             flatten(item,ret);
         }else{
             ret.push(item);
