@@ -1,11 +1,39 @@
 
+/*
+  
+  一个继承的实现
+  
+*/
+
+var extend = function(child, parent) {
+    
+    var hasProp = {}.hasOwnProperty;
+
+    // 首先呢，先把parent对象上的自有属性挨个儿添加到child对象上
+    for (var key in parent) {
+        if (hasProp.call(parent, key)) child[key] = parent[key];
+    }
+
+    // 定义一个构造器
+    function ctor() {
+        // 往由这个构造器生成的对象上添加一个 constructor 属性，值是child对象
+        this.constructor = child;
+    }
+    // 使构造器的prototype指向parent的prototype。
+    // 这样通过构造器生成的对象就能共享 parent.prototype 上的属性了
+    ctor.prototype = parent.prototype;
+    // 
+    child.prototype = new ctor();
+    child.__super__ = parent.prototype;
+    return child;
+}
+
 
 /*
 
   数组降维
 
 */
-
 
 function flatten(arr,ret){
     ret = ret || [];
