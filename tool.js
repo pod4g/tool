@@ -1,3 +1,29 @@
+
+
+/*
+
+  数组降维
+
+*/
+
+
+function flatten(arr,ret){
+    ret = ret || [];
+    if( arr == null || arr.length === 0 ) return ret;
+    var i = 0,length = arr.length,item;
+    var toString = Object.prototype.toString;
+    while( i < length ){
+        item = arr[i++];
+        if(toString.call(item) === '[object Array]'){
+            flatten(item,ret);
+        }else{
+            ret.push(item);
+        }
+    }
+    return ret;
+}
+
+
 /*
 
  设置input光标的位置
