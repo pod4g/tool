@@ -2,29 +2,27 @@
 
    复制到剪切板
    
-   支持的浏览器：IE6/7/8/9/10/11/Edge/Chrome/Opera/Firefox
+   完美支持的浏览器：      Edge/Chrome/Opera/Firefox
+   
+   支持但用户体验不太好：  IE6/7/8/9/10/11/   会弹窗询问用户是否允许网页访问系统剪切板
    
    由于安全性的原因，safari不支持，可以在error回调中作出相应的处理（例如选中文本，让用户直接复制，而不用先长按选中再复制）
 
 */
 
 function copyTextToClipboard(text,success,error){
-
         success = success || function(){};
-
         error = error || function(){};
-
         // 如果是IE，就使用IE专有方式进行拷贝
         if(window.clipboardData){
-
-            window.clipboardData.setData('Text',text);
-
-            success();
-        
+            var successful = window.clipboardData.setData('Text',text);
+            if(successful) {
+                success();
+            } else {
+                error();
+            }
         }else{
-
             var textArea = document.createElement('textarea');
-
             var styleArr = [ 'position:','fixed;',
                              'top:','0;',
                              'left:','0;',
@@ -37,37 +35,24 @@ function copyTextToClipboard(text,success,error){
                              'background:','transparent',
                            ]
             textArea.style.cssText = styleArr.join('');
-
             textArea.value = text;
-
             document.body.appendChild(textArea);
-
             textArea.select();
-
             try{
                 var successful = document.execCommand('copy');
-
                 var msg = successful ? 'successful' : 'unsuccessful';
-
                 console.log('Copying text command was ' + msg);
-
                 if(successful) {
-
                     success();
-
                 } else {
-
                     error();
-
                 }
-
             }catch(e){
                 console.log('Oops, unable to copy');
                 error();
             }
             document.body.removeChild(textArea);
         }
-
     }
 
 
