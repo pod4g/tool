@@ -1,5 +1,9 @@
 JavaScript学习笔记
 
+76. 前端编码规范。以后有其他前端同学进来，就需要了
+
+http://codecloud.net/5622.html
+
 75.
 
 PNG小图标可以改颜色啦！！！
