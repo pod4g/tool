@@ -1,5 +1,14 @@
 JavaScript学习笔记
 
+77. 对于货币格式，比如 123456 转成 123,456
+
+可以使用 Number(123456).toLocaleString(); // 123,456
+
+兼容性问题：IE9-返回 123,456.000
+            safari 原样返回
+            IE10/11/Edge/Chrome/Firefox/Opera 完美返回123,456
+
+
 76. 前端编码规范。以后有其他前端同学进来，就需要了
 
 http://codecloud.net/5622.html
