@@ -1,3 +1,29 @@
+
+/*
+
+ 获取broken的图片
+   注意必须写在load回调中，不然的话
+   在网速慢 + 图片大的情况下，会导致某些大图也计入broken
+   
+*/
+
+window.addEventListener('load', function(){
+	
+      var imgs = getByTag('img'), brokens = [], i = 0, img;
+      
+      while( img = imgs[i++] ){
+      	// 在网速慢，图片大时，大图片未加载出来时
+      	// 其 img.naturalWidth === 0 && img.naturalHeight === 0 
+        if( !img.complete || ( img.naturalWidth === 0 && img.naturalHeight === 0 ) ){
+          brokens.push(img);
+        }
+      }
+	
+      console.log('加载错误的图片有：', brokens);
+	
+}, false);
+
+
 /*
 
    复制到剪切板
