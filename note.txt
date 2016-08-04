@@ -9,7 +9,7 @@ console.log('wheel:',isEventSupported("wheel"));// FF:true CH/OP/Sa/Edge:true IE
 console.log('DOMMouseScroll:',isEventSupported("DOMMouseScroll"));// FF:false CH/OP/Sa/Edge:false IE:false
 
 console.log('mousewheel:',isEventSupported("mousewheel", document)); // FF:true CH/OP/Sa/Edge:true IE:true
-console.log('wheel:',isEventSupported("wheel", document));//FF:true CH/OP/Sa/Edge:true
+console.log('wheel:',isEventSupported("wheel", document));//FF:true CH/OP/Sa/Edge:true IE:false
 console.log('DOMMouseScroll:',isEventSupported("DOMMouseScroll", document));//FF:false CH/OP/Sa/Edge:false IE:false
 
 var isEventSupported = (function() {
