@@ -2,6 +2,8 @@ JavaScript学习笔记
 
 79. 判断是否支持某个事件
 
+可看到，会有一定的误差，需要再次细化判断
+
 console.log('mousewheel:',isEventSupported("mousewheel")); // FF:false CH/OP/Sa/Edge:true IE:true
 console.log('wheel:',isEventSupported("wheel"));// FF:true CH/OP/Sa/Edge:true IE:false
 console.log('DOMMouseScroll:',isEventSupported("DOMMouseScroll"));// FF:false CH/OP/Sa/Edge:false IE:false
