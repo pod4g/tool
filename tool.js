@@ -1,3 +1,17 @@
+/*
+
+ 获取页面中某个元素距离页面顶部的距离
+
+*/
+
+function getH(obj) {
+  var h = 0;
+  while (obj) {
+    h += obj.offsetTop;
+    obj = obj.offsetParent;
+  }
+  return h;
+}
 
 /*
 
