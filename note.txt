@@ -1,5 +1,23 @@
 JavaScript学习笔记
 
+80. js中()分组运算符的不求值特性
+
+    var GLOBAL_OBJECT = this;
+    GLOBAL_OBJECT.name = 'liyanshan';
+    var obj = {
+        name: 'liyanfeng',
+        say: function(){
+            alert(this.name);
+        }
+    }
+
+    console.log(GLOBAL_OBJECT);
+
+    (obj.say)(); // liyanfeng
+    (obj.say || 0)(); // liyanshan 强制求值，say才变成一个普通函数。
+
+
+
 79. 判断是否支持某个事件
 
 可看到，会有一定的误差，需要再次细化判断
