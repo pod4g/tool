@@ -1,3 +1,22 @@
+// 判断一个元素是否在可视区（视口）内部
+  function inViewport(element) {
+    var top, scrollTop, total, offsetTop;
+    if (isElement(element)) {
+      top = element.getBoundingClientRect().top;
+      if (top <= 0) {
+        return false;
+      }
+      scrollTop = body.scrollTop || html.scrollTop;
+      total = scrollTop + viewportHeight;
+      offsetTop = scrollTop + top;
+      if (offsetTop < total) {
+        return true;
+      }
+    }
+    return false;
+}
+
+
 /*
 
  获取页面中某个元素距离页面顶部的距离
