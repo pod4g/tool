@@ -1,21 +1,20 @@
 // 判断一个元素是否在可视区（视口）内部
-  function inViewport(element) {
-    var top, scrollTop, total, offsetTop;
-    if (isElement(element)) {
-      top = element.getBoundingClientRect().top;
-      if (top <= 0) {
-        return false;
-      }
-      scrollTop = body.scrollTop || html.scrollTop;
-      total = scrollTop + viewportHeight;
-      offsetTop = scrollTop + top;
-      if (offsetTop < total) {
-        return true;
-      }
+function inViewport(element, offset){
+    
+    if(isElement){
+      var rect = element.getBoundingClientRect(),
+          left = rect.left,
+          top = rect.top,
+          right = rect.right,
+          bottom = rect.bottom;
+      offset = offset || 0;
+      return bottom > offset
+          && right > offset
+          && window.innerWidth - left > offset
+          && window.innerHeight - top > offset;
     }
     return false;
-}
-
+  }
 
 /*
 
