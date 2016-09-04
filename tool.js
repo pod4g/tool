@@ -1,8 +1,7 @@
 // 判断一个元素是否在可视区（视口）内部
 function inViewport(element, offset){
-    
-    if(isElement){
-      var rect = element.getBoundingClientRect(),
+    if(!isElement) return false;
+    var rect = element.getBoundingClientRect(),
           left = rect.left,
           top = rect.top,
           right = rect.right,
@@ -12,9 +11,8 @@ function inViewport(element, offset){
           && right > offset
           && window.innerWidth - left > offset
           && window.innerHeight - top > offset;
-    }
-    return false;
   }
+
 
 /*
 
