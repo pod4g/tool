@@ -1,3 +1,45 @@
+
+/*
+使ele元素滚动到视口的垂直center
+*/
+
+function toViewportCenter(ele, offset){
+   if(isElement(ele)){
+     var OT = getOffsettopFromPageTop(ele);
+     var VH = document.documentElement.clientHeight;
+     var CH = ele.clientHeight;
+     var T = ( VH - CH ) / 2;
+     to( OT - T, offset );
+   }
+}
+
+
+/*
+
+ 获取页面中某个元素距离页面顶部的距离
+
+*/
+
+function getOffsettopFromPageTop(obj) {
+    var h = 0;
+    while (obj) {
+      h += obj.offsetTop;
+      obj = obj.offsetParent;
+    }
+    return h;
+}
+
+/*
+页面滚动到指定位置
+*/
+function to(top, offset){
+  document.body.scrollTop = document.documentElement.scrollTop = top + (offset || 0);
+}
+
+
+
+
+
 // 判断一个元素是否在可视区（视口）内部
 function inViewport(element, offset){
     if(!isElement) return false;
@@ -14,20 +56,7 @@ function inViewport(element, offset){
   }
 
 
-/*
 
- 获取页面中某个元素距离页面顶部的距离
-
-*/
-
-function getH(obj) {
-  var h = 0;
-  while (obj) {
-    h += obj.offsetTop;
-    obj = obj.offsetParent;
-  }
-  return h;
-}
 
 /*
 
