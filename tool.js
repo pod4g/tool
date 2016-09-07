@@ -1,5 +1,46 @@
 
 /*
+
+ 特定元素的事件由其父元素代理
+
+ 当点击特定元素或特定元素的子元素时，执行相应的逻辑
+
+*/
+
+var isDelegate = function(e, selector){
+        var 
+            ArrayClass = Array,
+            elements,
+            element,
+            i = 0,
+            target = e.target,
+            currentTarget = e.currentTarget,
+            makeArray = function(ele){
+                return typeof ArrayClass.from === 'function'? ArrayClass.from(ele):ArrayClass.prototype.slice.call(ele);
+            };
+        if(
+            typeof selector === 'string' // selector
+         ){
+            elements = makeArray(currentTarget.querySelectorAll(selector));
+        }else if(
+            selector && selector.nodeType // element
+        ){
+            elements = [ selector ];
+        }
+        else // dom数组/NodeList/HTMLCollection
+        {
+            elements = makeArray(selector);
+        }
+
+        while(element = elements[i++]){
+            if(element === target || element.contains(target)){
+                return true;
+            }
+        }
+        return false;
+}
+
+/*
 使ele元素滚动到视口的垂直center
 */
 
