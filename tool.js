@@ -46,9 +46,9 @@ var isDelegate = function(e, selector){
 
 function toViewportCenter(ele, offset){
    if(isElement(ele)){
-     var OT = getOffsettopFromPageTop(ele);
-     var VH = document.documentElement.clientHeight;
-     var CH = ele.clientHeight;
+     var OT = getOffsettopFromPageTop(ele); // 距离页面顶部的距离
+     var VH = document.documentElement.clientHeight; // viewport高度
+     var CH = ele.clientHeight; // 元素高度
      var T = ( VH - CH ) / 2;
      to( OT - T, offset );
    }
