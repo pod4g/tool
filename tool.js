@@ -1,6 +1,31 @@
 
 /*
 
+ trigger any event of ele by the specified EventName
+ 
+ for instance 
+ 
+ we can't trigger mouseover event like click by click()
+ 
+ fireEvent(btn, 'mouseover');
+
+*/
+
+function fireEvent( ele, EventName ) {
+    if( ele != null ) {   
+        if( ele.fireEvent ) {
+            ele.fireEvent( 'on' + EventName );     
+        } else {   
+            var evObj = document.createEvent( 'Events' );
+            evObj.initEvent( EventName, true, false );
+            ele.dispatchEvent( evObj );
+        }
+    }
+}
+
+
+/*
+
  特定元素的事件由其父元素代理
 
  当点击特定元素或特定元素的子元素时，执行相应的逻辑
