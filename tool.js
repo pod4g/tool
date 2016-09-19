@@ -1,4 +1,25 @@
-
+ /*
+      解析传进来的带标签的字符串，返回去掉标签之后的纯文本
+  */
+  function extractText(summary) {
+    if (!summary) {
+      return '';
+    }
+    // 如果传进来的本身就是纯本文，原样返回
+    if (!summary.startsWith('<') && !summary.endsWith('>')) {
+      return summary;
+    } else {
+      return summary.replace(/</g, "\n<")
+        .replace(/>/g, ">\n")
+        .replace(/\n\n/g, "\n")
+        .replace(/^\n/g, "")
+        .replace(/\n$/g, "")
+        .split("\n").filter(function(item) {
+          return !item.startsWith('<');
+        }).join('').replace(/&nbsp;?|<br\s*\/*>|\s*/ig, '');
+    }
+  }
+  
 /*
 
  trigger any event of ele by the specified EventName
