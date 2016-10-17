@@ -129,7 +129,7 @@ function to(top, offset){
 
 // 判断一个元素是否在可视区（视口）内部
 function inViewport(element, offset){
-    if(!isElement) return false;
+    if(!isElement(element)) return false;
     var rect = element.getBoundingClientRect(),
           left = rect.left,
           top = rect.top,
