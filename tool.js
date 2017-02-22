@@ -1,4 +1,17 @@
- /*
+
+/*
+ 获取文件扩展名
+ 'filename'	''
+ 'filename.txt'	'txt'
+ '.hiddenfile'	''
+ 'filename.with.many.dots.ext'	'ext'
+*/
+function getFileExtension(filename) {
+    return filename.slice((filename.lastIndexOf('.') - 1 >>> 0) + 2);
+}
+ 
+
+/*
       解析传进来的带标签的字符串，返回去掉标签之后的纯文本
   */
   function extractText(summary) {
