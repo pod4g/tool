@@ -42,7 +42,12 @@ function getFileExtension(filename) {
  we can't trigger mouseover event like click by click()
  
  fireEvent(btn, 'mouseover');
-
+ 
+ 这是微软IE浏览器用以替代EventTarget.dispatchEvent()的私有方法，
+ 与EventTarget.dispatchEvent()不同的是通过fireEvent() 触发的事件不会触发事件的默认行为，
+ 例如，通过fireEvent()触发<input type="checkbox">的点击事件并不会切换checkbox的选中状态
+ 
+ https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/fireEvent
 */
 
 function fireEvent( ele, EventName ) {
