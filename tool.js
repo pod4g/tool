@@ -122,7 +122,12 @@ function toViewportCenter(ele, offset){
 /*
 
  获取页面中某个元素距离页面顶部的距离
+ HTMLElement.offsetParent 是一个只读属性，返回一个指向最近的（closest，指包含层级上的最近）包含该元素的定位元素。
+ 如果没有定位的元素，则 offsetParent 为最近的 table, table cell 或根元素（标准模式下为 html；quirks 模式下为 body）。
+ 当元素的 style.display 设置为 "none" 时，offsetParent 返回 null。offsetParent 很有用，因为 offsetTop 和 offsetLeft 都是相对于其内边距边界的。
 
+
+ https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent
 */
 
 function getOffsettopFromPageTop(obj) {
