@@ -1,3 +1,21 @@
+/**
+ * 一个节点如果放到文档碎片中，那么就会从页面删除
+ * 把节点转成文档碎片并从文档中移出 vue用到了这个方法
+*/
+function node2Fragment(node, vm) {
+   //这里是dom劫持，vue会新建一个文档片段来替换dom中本来的结点
+   var flag = document.createDocumentFragment();
+   //子节点
+   var child;
+   while (child = node.firstChild) {
+     console.log('child:', child)
+     //开始编译每个结点
+     // compile(child,vm);
+     //appendchild方法会自动删除node对象的child结点
+     flag.appendChild(child)
+   }
+   return flag;
+}
 
 /*
  获取文件扩展名
