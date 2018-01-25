@@ -1,3 +1,48 @@
+ /**
+     * 
+     * 2018-01-25去阿里面试了，其中有道阿里面试题。。
+     * 给一个图片url数组，一个图片下载完毕，在下载另外一个
+     */
+    function loadImageByOrder () {
+        let done = false
+        let allDone = false
+        console.log('loadImageByOrder...')
+        return function (arr, callback) {
+            console.log('闭包函数...', arr)
+            if (!arr || !Array.isArray(arr) || !arr.length) return
+            // 过滤出空的或者是null、undefined的值
+            arr = arr.filter(url => !!url)
+            console.log('闭包函数处理后的arr...', arr)
+            function download (url) {
+                if (!url) {
+                    allDone = true
+                    return
+                }
+                done = false
+                console.log('开始下载' + url)
+                const image = new Image()
+                image.src = url
+                image.onload = image.error = () => {
+                    done = true
+                    console.log('下载成功' + url)
+                    callback.call(image, url)
+                }
+            }
+            download(arr.shift())
+            const interval = 17
+            const timer = 
+            setTimeout (function checker () {
+                setTimeout(checker, interval)
+                if (!done) return
+                if (allDone) {
+                    clearTimeout(timer)
+                    return
+                }
+                download(arr.shift())
+            }, interval)
+        }
+    }
+
 /**
  * 一个节点如果放到文档碎片中，那么就会从页面删除
  * 把节点转成文档碎片并从文档中移出 vue用到了这个方法
