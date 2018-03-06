@@ -1,3 +1,23 @@
+/*
+  实现[ba, bb]之间的随机数
+*/
+function random (ba, bb) {
+            const NUMBER_TYPE = '[object Number]'
+            if (
+                !ba || 
+                !bb ||
+                Object.prototype.toString.call(ba) !==  NUMBER_TYPE|| 
+                Object.prototype.toString.call(bb) !== NUMBER_TYPE 
+            ) return
+            ba = Number(ba)
+            bb = Number(bb)
+            // 如果两者相等，那么每次随机都是这个数
+            if (ba === bb) return ba
+            // 交换位置
+            if (ba > bb) [ba, bb] = [bb, ba]
+            return Math.floor(Math.random() * (bb - ba + 1) + ba)
+        }
+
  /**
      * 
      * 2018-01-25去阿里面试了，其中有道阿里面试题。。
