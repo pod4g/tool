@@ -14,15 +14,6 @@ export default {
     webApp: u.indexOf('Safari') === -1, // 是否web应该程序，没有头部与底部
     weixin: u.indexOf('MicroMessenger') > -1, // 是否微信 （2015-01-22新增）
     qq: u.match(/\sQQ/i) === ' qq', // 是否QQ
-    // zhushou: (function () {
-    //   const reg = /zhushou ?(\d+(\.\d+){0,2})/
-    //   const zhushou = u.match(reg)
-    //   let version = null
-    //   if (zhushou) {
-    //     version = zhushou[1]
-    //   }
-    //   return version
-    // })(),
     iPhoneX: (function () {
       const iOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
       const ratio = window.devicePixelRatio || 1
